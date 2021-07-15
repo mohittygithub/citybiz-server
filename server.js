@@ -21,3 +21,5 @@ db.sequelize.sync().then(() => {
     console.log(`Server is listening on http://localhost:${PORT}`);
   });
 });
+
+// this is dev branch
