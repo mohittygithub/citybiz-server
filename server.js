@@ -16,10 +16,14 @@ app.use("/api/users", userRoute);
 
 const PORT = process.env.PORT || 5001;
 
-db.sequelize.sync().then(() => {
-  app.listen(PORT, () => {
-    console.log(`Server is listening on http://localhost:${PORT}`);
-  });
+app.listen(PORT, () => {
+  console.log(`Server is listening on http://localhost:${PORT}`);
 });
+
+// db.sequelize.sync().then(() => {
+//   app.listen(PORT, () => {
+//     console.log(`Server is listening on http://localhost:${PORT}`);
+//   });
+// });
 
 // this is dev branch
