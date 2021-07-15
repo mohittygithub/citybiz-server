@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "password",
-    "database": "citybiz_server_dev",
-    "host": "127.0.0.1",
+    "username": "sql6425539",
+    "password": "wREmjNwaNG",
+    "database": "sql6425539",
+    "host": "sql6.freesqldatabase.com",
     "dialect": "mysql"
   },
   "test": {

@@ -23,14 +23,22 @@ app.use("/api/users", userRoute);
 
 const PORT = process.env.PORT || 5001;
 
-app.listen(PORT, () => {
-  console.log(`Server is listening on http://localhost:${PORT}`);
-});
-
-// db.sequelize.sync().then(() => {
-//   app.listen(PORT, () => {
-//     console.log(`Server is listening on http://localhost:${PORT}`);
-//   });
+// app.listen(PORT, () => {
+//   console.log(`Server is listening on http://localhost:${PORT}`);
 // });
 
-// this is dev branch
+db.sequelize.sync().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server is listening on http://localhost:${PORT}`);
+  });
+});
+
+/*
+
+Host: sql6.freesqldatabase.com
+Database name: sql6425539
+Database user: sql6425539
+Database password: wREmjNwaNG
+Port number: 3306
+
+*/

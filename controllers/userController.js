@@ -9,7 +9,11 @@ const {
 // get all users
 exports.getAllUsers = async (req, res, next) => {
   try {
-    const users = await db.User.findAll();
+    const users = await db.User.findAll({
+      attributes: {
+        exclude: ["password"],
+      },
+    });
     res.status(200).json({ success: true, data: users });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
@@ -66,15 +70,16 @@ exports.userLogin = async (req, res, next) => {
   if (email && password) {
     try {
       const user = await db.User.findOne({ where: { email: email } });
+      console.log("user=>", user.email);
 
       if (!user) {
         return res
           .status(400)
           .json({ success: false, error: "Invalid username/password" });
       }
+      console.log(user.password);
 
       const isMatched = await comparePasswords(password, user.password);
-
       if (!isMatched) {
         return res
           .status(400)

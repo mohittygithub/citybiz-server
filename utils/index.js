@@ -5,7 +5,6 @@ const sgMail = require("@sendgrid/mail");
 // password encryption
 exports.encryptPassword = async (password) => {
   const hashedPassword = await bcrypt.hash(password, 10);
-  //   console.log(password, hashedPassword);
   return hashedPassword;
 };
 
@@ -59,8 +58,8 @@ exports.sendEmail = () => {
   };
   sgMail
     .send(msg)
-    .then((result) => {
-      console.log("Email sent=>", result);
+    .then(() => {
+      console.log("Email sent");
     })
     .catch((error) => {
       console.error("error=>", error.response.body);

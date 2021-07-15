@@ -17,9 +17,6 @@ module.exports = (sequelize, DataTypes) => {
     password: {
       type: DataTypes.STRING,
       allowNull: false,
-      get() {
-        return undefined;
-      },
     },
     mobile: {
       type: DataTypes.STRING,
