@@ -6,13 +6,6 @@ const {
   sendEmail,
 } = require("../utils");
 
-// test route
-exports.testRoute = (req, res, next) => {
-  res
-    .status(200)
-    .json({ success: true, message: "This is a test route on users" });
-};
-
 // get all users
 exports.getAllUsers = async (req, res, next) => {
   try {

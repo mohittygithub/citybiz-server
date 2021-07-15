@@ -12,6 +12,13 @@ app.use(urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
+// test route
+app.get("/", (req, res) => {
+  res
+    .status(200)
+    .json({ success: true, message: "This is a test route on users" });
+});
+
 app.use("/api/users", userRoute);
 
 const PORT = process.env.PORT || 5001;
